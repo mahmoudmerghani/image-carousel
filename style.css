@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image-carousel {
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-carousel .slides {
+    display: flex;
+    height: 100%;
+    transition: transform 400ms ease-in-out;
+}
+
+.image-carousel .slides div {
+    flex: 1 0 100%;
+}
+
+.image-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-carousel button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    aspect-ratio: 1 / 1;
+    color: white;
+    background-color: rgb(0, 0, 0, 0.4);
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.image-carousel button:hover {
+    background-color: white;
+    color: black;
+}
+
+.image-carousel .previous {
+    left: 1rem;
+}
+
+.image-carousel .next {
+    right: 1rem;
+}
+
+.image-carousel .control-dots {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-carousel .control-dots > * {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(0, 0, 0, 0.4);
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.image-carousel .control-dots > *:hover,
+.image-carousel .control-dots > .active {
+    background-color: white;
+}
